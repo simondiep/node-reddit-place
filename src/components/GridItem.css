@@ -1,0 +1,27 @@
+.GridItem {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.GridItem:hover {
+  height: 18px;
+  width: 18px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.GridItemPopover {
+  position: absolute;
+  z-index: 2;
+}
+
+.GridItemCover {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
