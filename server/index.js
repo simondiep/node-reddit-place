@@ -6,7 +6,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const path = require('path');
 
 const router = express.Router();
