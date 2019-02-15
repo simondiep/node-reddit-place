@@ -1,6 +1,7 @@
 # React Reddit Place
 
 Node and React based implementation of Reddit Place.
+Uses socket.io for live-updates from other users.
 
 ![demo preview](./preview.gif?raw=true)
 
@@ -20,7 +21,3 @@ Note: Remember to build your web code.  The webpack-dev-server content does not 
 - `public` - Template html from create-react-app
 - `server` - Node Server code
 - `src` - Front-end code
-
-## Get working for Heroku
-
-The socket.io url is returning HTML rather than JSON
