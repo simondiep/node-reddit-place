@@ -12,6 +12,13 @@ class GridItem extends React.Component {
     };
   }
 
+  // This is needed to properly render updates from socket.io
+  componentDidUpdate(prevProps) {
+    if (prevProps.color !== this.props.color) {
+      this.setState({color: this.props.color});
+    }
+  }
+
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker });
   };

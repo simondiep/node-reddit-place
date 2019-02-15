@@ -11,14 +11,15 @@ export default class Grid extends Component {
       drawing: null,
     };
     this.socketIo = io();
+    this.socketIo.connect('')
     this.socketIo.on('initialize', (data) => {
       this.setState({ drawing: data });
     });
     this.socketIo.on('new color', (data) => {
-      if (this.state.drawing) {
-        const updatedDrawing = Object.assign({}, this.state.drawing);
-        updatedDrawing[data.rowIndex][data.columnIndex] = data.color;
-        this.setState({ drawing: updatedDrawing });
+      const currentDrawing = this.state.drawing;
+      if (currentDrawing) {
+        currentDrawing[data.rowIndex][data.columnIndex] = data.color;
+        this.setState({ drawing: currentDrawing });
       }
     });
   }
