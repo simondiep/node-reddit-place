@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const WEBTASK_STORAGE_URL = "https://wt-82e23ef79ade2a8d8cfed3117b878cdb-0.sandbox.auth0-extend.com/node-reddit-place";
+const WEBTASK_STORAGE_URL = "https://wt-82e23ef79ade2a8d8cfed3117b878cdb-0.sandbox.auth0-extend.com/tbc-node-reddit-place";
 
 let drawing;
 
