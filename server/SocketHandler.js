@@ -1,7 +1,7 @@
 import { getDrawing, updateDrawing } from './DrawingStore';
 
 export function initializeSocketIo(io) {
-  io.on('connection', (socket) => {
+  io.on('connection', async function(socket) {
     socket.on('user changed color', (data) => {
       updateDrawing(data);
       socket.broadcast.emit('new color', {
@@ -10,6 +10,7 @@ export function initializeSocketIo(io) {
         color: data.color,
       });
     });
-    socket.emit('initialize', getDrawing());
+    const drawing = await getDrawing();
+    socket.emit('initialize', drawing);
   });
-}
+};

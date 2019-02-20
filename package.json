@@ -9,6 +9,7 @@
     "@babel/register": "^7.0.0",
     "express": "^4.16.4",
     "ignore-styles": "^5.0.1",
+    "node-fetch": "^2.3.0",
     "react": "^16.5.2",
     "react-color": "^2.14.1",
     "react-dom": "^16.5.2",

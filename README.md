@@ -5,9 +5,19 @@ Uses socket.io for live-updates from other users.
 
 ![demo preview](./preview.gif?raw=true)
 
+## External Storage
+
+This app leverages an external store (webtask.io) for storing the drawing. To set up your own external store:
+
+- Create a new webtask at https://webtask.io/make
+- Copy/paste the code in webtask_drawing.js into your webtask.
+- Save
+- Grab the public URL for your webtask at the bottom of the webtask editor
+- Replace the value of `WEBTASK_STORAGE_URL` inside `server/DrawingStore.js`
+
 ## How to Start
 
-- Set your homepage to http://localhost:3000 in package.json
+- Follow steps above to set up external storage
 - Build your React app
 - `npm run build-react`
 - Start your server
