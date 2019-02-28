@@ -34,7 +34,13 @@ export default class Grid extends Component {
       gridItems[rowIndex] = [];
       for (let columnIndex = 0; columnIndex < this.state.drawing[rowIndex].length; columnIndex++) {
         gridItems[rowIndex].push(
-          <GridItem io={this.socketIo} color={this.state.drawing[rowIndex][columnIndex]} rowIndex={rowIndex} columnIndex={columnIndex} />,
+          <GridItem
+            io={this.socketIo}
+            color={this.state.drawing[rowIndex][columnIndex]}
+            rowIndex={rowIndex}
+            columnIndex={columnIndex}
+            selectedColor={this.props.selectedColor}
+          />,
         );
       }
     }

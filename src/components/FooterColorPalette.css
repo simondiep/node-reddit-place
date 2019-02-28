@@ -1,0 +1,34 @@
+#footer-bar {
+  background-color: lightgray;
+  position: absolute;
+  height: 50px;
+  width: fit-content;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+#color-palette {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.color-option {
+  height: 26px;
+  width: 26px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s transform ease-in-out, 0.1s box-shadow ease-in-out;
+}
+
+.selected-color-option {
+  height: 28px;
+  width: 28px;
+  margin: 3px;
+}

@@ -12,16 +12,3 @@
   border: 1px solid black;
   cursor: pointer;
 }
-
-.GridItemPopover {
-  position: absolute;
-  z-index: 2;
-}
-
-.GridItemCover {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}

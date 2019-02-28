@@ -1,5 +1,4 @@
 import React from "react";
-import { CompactPicker } from "react-color";
 import { STORAGE_URL } from "../Constants";
 import "./GridItem.css";
 
@@ -8,7 +7,6 @@ class GridItem extends React.Component {
     super(props);
     this.state = {
       color: props.color,
-      displayColorPicker: false,
     };
   }
 
@@ -20,39 +18,20 @@ class GridItem extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
-  };
-
-  handleClose = () => {
-    this.setState({ displayColorPicker: false });
-  };
-
-  onColorChange = ({ hex }) => {
-    this.setState({ color: hex });
-  };
-
-  onColorPickerClose = () => {
     const { rowIndex, columnIndex } = this.props;
-    const color = this.state.color;
-
+    const color = this.props.selectedColor;
     this.props.io.emit('user changed color', {
       rowIndex, columnIndex, color,
     });
+    this.setState({ color });
   };
 
   render() {
     return (
-      <div className="GridItem" onClick={this.handleClick} style={{ backgroundColor: this.state.color }}>
-        {this.state.displayColorPicker ? (
-          <div className="GridItemPopover">
-            <div className="GridItemCover" onClick={this.handleClose} />
-            <CompactPicker
-              color={this.state.color}
-              onChange={this.onColorChange}
-              onChangeComplete={this.onColorPickerClose}
-            />
-          </div>
-        ) : null}
+      <div className="GridItem"
+        onClick={this.handleClick}
+        style={{ backgroundColor: this.state.color }}
+      >
       </div>
     );
   }
